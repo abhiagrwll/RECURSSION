@@ -1,0 +1,14 @@
+package RECURSSION;
+
+public class fact_tail {
+    public static void main(String[] args) {
+        int n=5;
+        System.out.println(tail_fact(n,1));
+    }
+    public static int tail_fact(int n,int ans){
+        if(n==0){
+            return ans;
+        }
+        return tail_fact(n-1,ans*n);
+    }
+}
