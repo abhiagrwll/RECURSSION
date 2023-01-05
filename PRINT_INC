@@ -1,0 +1,14 @@
+package RECURSSION;
+public class print_inc {
+    public static void main(String[] args) {
+        int n=5;
+        print_in(n);
+    }
+    public static void print_in(int n){
+        if(n==0){
+            return;
+        }
+        print_in(n-1);
+        System.out.println(n);
+    }
+}
