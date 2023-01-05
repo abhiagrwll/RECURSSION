@@ -1,18 +1,27 @@
-package RECURSSION;
+    package RECURSSION;
 
-import java.util.Scanner;
+    import java.util.Scanner;
 
-public class power {
-    public static void main(String[] args) {
-        int a=2;
-        int b=4;
-        int ans=1;
-        System.out.println(pow(a,b,ans));
-    }
-    public static int pow(int a , int b,int ans){
-        if(b==0){
-            return ans;
+    public class power {
+        public static void main(String[] args) {
+            int a=2;
+            int b=4;
+            int ans=1;
+            System.out.println(pow_tail(a,b,ans));
+            System.out.println(pow_head(a,b));
         }
-        return pow(a,b-1,ans*a);//tail recurssion
+        public static int pow_tail(int a , int b,int ans){
+            if(b==0){
+                return ans;
+            }
+            return pow_tail(a,b-1,ans*a);//tail recurssion
+        }
+        public static int pow_head(int a,int b){
+            if(b==0){
+                return 1;
+            }
+            int ans =pow_head(a,b-1);
+            return ans*a;
+        }
     }
-}
+
